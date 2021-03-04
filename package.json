@@ -34,5 +34,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://us-central1-slydro-2327.cloudfunctions.net/api"
 }
