@@ -3,6 +3,11 @@
   --main-two: #02292c;
   --light: #f5e2b3;
   --highlight: #02fafa;
+  --baloo: 'Baloo 2', cursive;
+  --kod: 'Kodchasen', sans-serif;
+  --koho: 'KoHo', sans-serif;
+  --pal-one: 'Palaquin', sans-serif;
+  --pal-two: 'Palaquin dark', sans-serif;
 }
 
 body {
@@ -19,6 +24,7 @@ body {
 }
 
 .slydro-logo {
+  font-family: var(--baloo);
   color: var(--main-one) !important;
   font-size: 16rem !important;
 }
@@ -29,7 +35,8 @@ body {
 }
 
 h1, h2 {
-  font-family: 'Baloo';
+  font-family: var(--baloo);
+  font-weight: 800;
   margin: 0 auto;
   padding-top: 64px;
   color: var(--main-two);
@@ -43,7 +50,7 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 
 h2 {
