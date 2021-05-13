@@ -1,9 +1,15 @@
 import './App.css';
+import React from 'react';
+import SlydroLogo from './icons/SlydroLogo';
 
 function App() {
   return (
     <div className="App">
-      <h1>Coming Soon</h1>
+      <div className="splash">
+      <h1>SLYDRO</h1>
+      <h2>COMING SOON</h2>
+      <SlydroLogo className="slydro-logo"/>
+      </div>
     </div>
   );
 }
