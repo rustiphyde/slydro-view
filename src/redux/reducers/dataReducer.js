@@ -1,5 +1,6 @@
 import {
-	SET_SLYDESHOWS
+	SET_SLYDESHOWS,
+    LOADING_DATA
 } from "../types";
 
 const initialState = {
