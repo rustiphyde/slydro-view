@@ -15,3 +15,4 @@ export const CLEAR_SUCCESS = 'CLEAR_SUCCESS';
 
 // Data Reducer Types
 export const SET_SLYDESHOWS = 'SET_SLYDESHOWS';
+export const LOADING_DATA = 'LOADING_DATA';
