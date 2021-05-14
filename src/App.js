@@ -36,6 +36,22 @@ axios.defaults.baseURL = "https://us-central1-slydro-2327.cloudfunctions.net/api
 
 const theme = createMuiTheme(themeFile);
 
+const token = localStorage.FBIdToken;
+if(token){
+  const decodedToken = jwtDecode(token);
+  if(decodedToken.exp * 1000 < Date.now()){
+    store.dispatch(logoutUser());
+    window.location.href = '/login'
+  } else {
+    store.dispatch({ type: SET_AUTHENTICATED });
+    axios.defaults.headers.common['Authorization'] = token;
+    store.dispatch(getUserDetails());
+  }
+} 
+
+firebase.initializeApp(config);
+firebase.firestore();
+
 function App() {
   return (
     <div className="App">
