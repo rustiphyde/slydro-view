@@ -14,7 +14,7 @@ const initialState = {};
 const middleware = [thunk.withExtraArgument({ getFirestore, getFirebase})];
 
 // Actual State
-const reducers = combinereducers({
+const reducers = combineReducers({
     // Everything that comes from slyderReducer.js will be stored inside the slyder object
   slyder: slyderReducer,
   // Everything that comes from dataReducer.js will be stored inside the data object
