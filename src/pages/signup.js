@@ -69,17 +69,7 @@ class signup extends Component {
 			firstName: "",
 			lastName: "",
 			loading: false,
-			errors: {},
 		};
-	}
-
-	componentDidUpdate(prevProps, prevState) {
-		if (prevProps.UI.errors !== this.props.UI.errors && this.props.UI.errors) {
-			this.setState({ errors: this.props.UI.errors });
-		}
-		if (prevState.errors !== this.state.errors) {
-			this.setState({ errors: this.state.errors });
-		}
 	}
 
 	handleSubmit = (event) => {
@@ -105,9 +95,8 @@ class signup extends Component {
 	render() {
 		const {
 			classes,
-			UI: { loading },
+			UI: { loading, errors },
 		} = this.props;
-		const { errors } = this.state;
 		return (
 			<Grid container className={classes.form}>
 				<Grid item sm />
@@ -122,8 +111,8 @@ class signup extends Component {
 							type="email"
 							label="EMAIL ADDRESS"
 							className={classes.textField}
-							helperText={errors.email}
-							error={errors.email ? true : false}
+							helperText={errors && errors.email ? errors.email : ""}
+							error={errors && errors.email ? true : false}
 							value={this.state.email}
 							onChange={this.handleChange}
 							fullWidth
@@ -138,8 +127,8 @@ class signup extends Component {
 							type="password"
 							label="PASSWORD"
 							className={classes.textField}
-							helperText={errors.password}
-							error={errors.password ? true : false}
+							helperText={errors && errors.password ? errors.password : ""}
+							error={errors && errors.password ? true : false}
 							value={this.state.password}
 							onChange={this.handleChange}
 							fullWidth
@@ -154,8 +143,8 @@ class signup extends Component {
 							type="password"
 							label="CONFIRM PASSWORD"
 							className={classes.textField}
-							helperText={errors.confirmPassword}
-							error={errors.confirmPassword ? true : false}
+							helperText={errors && errors.confirmPassword ? errors.confirmPassword : ""}
+							error={errors && errors.confirmPassword ? true : false}
 							value={this.state.confirmPassword}
 							onChange={this.handleChange}
 							fullWidth
@@ -171,8 +160,8 @@ class signup extends Component {
 								type="name"
 								label="FIRST NAME"
 								className={classes.textField}
-								helperText={errors.firstName}
-								error={errors.firstName ? true : false}
+								helperText={errors && errors.firstName ? errors.firstName : ""}
+								error={errors && errors.firstName ? true : false}
 								value={this.state.firstName}
 								onChange={this.handleChange}
 								autoComplete="given-name"
@@ -186,8 +175,8 @@ class signup extends Component {
 								type="name"
 								label="LAST NAME"
 								className={classes.textField}
-								helperText={errors.lastName}
-								error={errors.lastName ? true : false}
+								helperText={errors && errors.lastName ? errors.lastName : ""}
+								error={erros && errors.lastName ? true : false}
 								value={this.state.lastName}
 								onChange={this.handleChange}
 								autoComplete="family-name"
@@ -197,7 +186,7 @@ class signup extends Component {
 							/>
 						</span>
 						<br />
-						{errors.general && (
+						{errors && errors.general && (
 							<Typography variant="body2" className={classes.customError}>
 								{errors.general}
 							</Typography>
