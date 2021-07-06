@@ -111,7 +111,7 @@ class signup extends Component {
 		return (
 			<Grid container className={classes.form}>
 				<Grid item sm />
-				<Grid item sm>
+				<Grid item sm={8}>
                 <Typography variant="h4" className="title">
             <span className="title">SIGN UP</span>
           </Typography>
