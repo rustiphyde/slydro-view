@@ -81,7 +81,7 @@ class App extends Component {
               
             
             <div className="container">
-            <div className="splash"><span><img src={logo} width="64" height="64"/></span></div>
+            
             {/* <hr className="bar-separator"/> */}
                 <Switch>
                 <AuthRoute
