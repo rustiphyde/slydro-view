@@ -66,17 +66,9 @@ class login extends Component {
       email: "",
       password: "",
       loading: false,
-      errors: {}
     };
   }
-  componentDidUpdate(prevProps, prevState) {
-		if (prevProps.UI.errors !== this.props.UI.errors && this.props.UI.errors) {
-			this.setState({ errors: this.props.UI.errors });
-		}
-		if (prevState.errors !== this.state.errors) {
-			this.setState({ errors: this.state.errors });
-		}
-	}
+
   handleSubmit = event => {
     event.preventDefault();
     // Save input to userData variable
@@ -92,8 +84,7 @@ class login extends Component {
     });
   };
   render() {
-    const { classes, UI: { loading }} = this.props;
-    const { errors } = this.state;
+    const { classes, UI: { loading, errors }} = this.props;
     return (
       <Grid container className={classes.form}>
         <Grid item sm />
@@ -108,8 +99,8 @@ class login extends Component {
               type="email"
               label="EMAIL ADDRESS"
               className={classes.textField}
-              helperText={errors.email}
-              error={errors.email ? true : false}
+              helperText={errors && errors.email ? errors.email : ""}
+              error={errors && errors.email ? true : false}
               value={this.state.email}
               onChange={this.handleChange}
               fullWidth
@@ -124,8 +115,8 @@ class login extends Component {
               type="password"
               label="PASSWORD"
               className={classes.textField}
-              helperText={errors.password}
-              error={errors.password ? true : false}
+              helperText={errors && errors.password ? errors.password : ""}
+              error={errors && errors.password ? true : false}
               value={this.state.password}
               onChange={this.handleChange}
               fullWidth
@@ -134,7 +125,7 @@ class login extends Component {
                 shrink: true,
               }}
             />
-            {errors.general && (
+            {errors && errors.general && (
               <Typography variant="body2" className={classes.customError}>
                 {errors.general}
               </Typography>
