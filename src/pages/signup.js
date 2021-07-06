@@ -176,7 +176,7 @@ class signup extends Component {
 								label="LAST NAME"
 								className={classes.textField}
 								helperText={errors && errors.lastName ? errors.lastName : ""}
-								error={erros && errors.lastName ? true : false}
+								error={errors && errors.lastName ? true : false}
 								value={this.state.lastName}
 								onChange={this.handleChange}
 								autoComplete="family-name"
