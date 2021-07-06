@@ -26,7 +26,6 @@ render(){
     return(
         <AppBar>
             <hr className="bar-separator"/>
-            <h3 className="nav-title">SLYDRO</h3>
             <Toolbar className="nav-container">
             { authenticated  ? (
                 <Fragment>
