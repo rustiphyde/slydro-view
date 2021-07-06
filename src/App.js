@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
+import logo from './images/logo.png'
 
 // Firebase
 import firebase from 'firebase/app';
@@ -16,6 +17,7 @@ import store from './redux/store';
 import { SET_AUTHENTICATED } from './redux/types';
 import { createFirestoreInstance } from 'redux-firestore';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { logoutSlyder, getSlyderDetails } from './redux/actions/slyderActions';
 
 
 // Util
@@ -27,8 +29,12 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 
 // Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // Pages
+import login from './pages/login';
+import signup from './pages/signup';
 
 import SlydroLogo from './icons/SlydroLogo';
 
@@ -40,12 +46,12 @@ const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token);
   if(decodedToken.exp * 1000 < Date.now()){
-    // store.dispatch(logoutUser());
+    store.dispatch(logoutSlyder());
     window.location.href = '/login'
   } else {
     store.dispatch({ type: SET_AUTHENTICATED });
     axios.defaults.headers.common['Authorization'] = token;
-    // store.dispatch(getUserDetails());
+    store.dispatch(getSlyderDetails());
   }
 } 
 
@@ -71,9 +77,27 @@ class App extends Component {
         <Provider store={store}>
           <ReactReduxFirebaseProvider {...rrfProps}>
             <BrowserRouter>
+            <Navbar/>
+              
+            
             <div className="container">
-                
+            <div className="splash"><span><img src={logo} width="64" height="64"/></span></div>
+            {/* <hr className="bar-separator"/> */}
+                <Switch>
+                <AuthRoute
+                exact
+                path="/login"
+                component={login}
+                />
+                <AuthRoute
+                exact
+                path="/signup"
+                component={signup}
+                />
+                </Switch>
             </div>
+            <hr className="bar-separator"/>
+            <Footer />
             </BrowserRouter>
           </ReactReduxFirebaseProvider>
         </Provider>
