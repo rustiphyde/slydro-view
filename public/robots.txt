@@ -1,3 +1,5 @@
+Sitemap: https://slydro.com/sitemap_index.xml
+
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+

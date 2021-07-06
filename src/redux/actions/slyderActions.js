@@ -24,7 +24,7 @@ import {
         setAuthorizationHeader(res.data.token);
         dispatch(getSlyderDetails());
         dispatch({ type: CLEAR_ERRORS });
-        history.push("/home");
+        history.push("/");
       })
       .catch(err => {
         dispatch({
@@ -38,7 +38,6 @@ import {
     localStorage.removeItem("FBIdToken");
     delete axios.defaults.headers.common["Authorization"];
     dispatch({ type: SET_UNAUTHENTICATED });
-    window.location.href = "/login";
   };
 
   export const signupSlyder = (newSlyderData, history) => dispatch => {

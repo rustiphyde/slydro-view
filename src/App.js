@@ -36,8 +36,6 @@ import Footer from './components/Footer';
 import login from './pages/login';
 import signup from './pages/signup';
 
-import SlydroLogo from './icons/SlydroLogo';
-
 axios.defaults.baseURL = "https://us-central1-slydro-2327.cloudfunctions.net/api";
 
 const theme = createMuiTheme(themeFile);

@@ -8,6 +8,7 @@ class Footer extends Component {
 
     handleLogout = () => {
         this.props.logoutSlyder();
+        window.location.href = "/login";
     }
 
     render() {
