@@ -1,26 +1,136 @@
 :root {
   --main-one: #076b75;
-  --main-two: #02292c;
+  --main-two: #011618;
   --light: #f5e2b3;
-  --highlight: #02fafa;
+  --highlight: #9efafa;
   --baloo: 'Baloo 2', cursive;
-  --kod: 'Kodchasen', sans-serif;
+  --kod: 'Kodchasan', sans-serif;
   --koho: 'KoHo', sans-serif;
-  --pal-one: 'Palaquin', sans-serif;
-  --pal-two: 'Palaquin dark', sans-serif;
+  --pal-one: 'Palanquin', sans-serif;
+  --pal-two: 'Palanquin Dark', sans-serif;
 }
 
 body {
   background-color: var(--main-two);
 }
 
+a {
+  text-decoration: none;
+}
+
+.small-text {
+  font-family: var(--koho);
+  color: white;
+}
+
 .App {
   text-align: center;
+  margin: 0 auto;
   background-color: var(--main-two);
 }
 
+.container {
+  margin: 11rem auto 2rem auto;
+}
+
+.MuiAppBar-colorPrimary {
+  background-color: var(--main-two) !important;
+}
+
+.nav-container {
+  margin: auto;
+}
+
+.nav-container svg {
+  color: var(--highlight);
+  font-size: 200%;
+}
+
+.nav-container svg:hover {
+  color: var(--main-one);
+}
+
+.MuiToolbar-gutters {
+  padding-left: 0 !important;
+  padding-right: 0 !important; 
+}
+
+.MuiButton-containedPrimary {
+  color:white !important;
+  background-color: var(--main-one) !important;
+  font-family: var(--koho) !important;
+  border-radius: 16px !important;
+}
+
+.MuiButton-containedPrimary:hover {
+  color: var(--main-two) !important;
+  background-color: var(--highlight) !important;  
+}
+
+.MuiButton-root {
+  min-width: 132px !important;
+  margin: 16px !important;
+}
+
+.title {
+  font-family: var(--baloo) !important;
+  font-weight: 700 !important;
+  margin: 32px auto 10px auto !important;
+  font-size: 3rem;
+  color: var(--highlight);
+}
+
+.nav-title {
+  font-family: var(--koho) !important;
+  font-weight: 700 !important;
+  margin: 16px auto 8px auto !important;
+  font-size: 3rem;
+  color: var(--highlight);
+}
+
+.MuiInput-underline:before, .MuiInput-underline:after {
+  border-bottom: none !important;
+}
+
+.MuiInputLabel-animated {
+  transition: none !important;
+}
+
+#email, #password, #confirmPassword, #firstName, #lastName {
+  background-color: white;
+  color: var(--main-one);
+  padding-left: 16px;
+  margin: 6px 32px;
+  border-radius: 16px;
+} 
+
+#email-label, #password-label, #confirmPassword-label, #firstName-label, #lastName-label {
+  padding-left: 80px !important;
+  color: var(--highlight) !important;
+  font-family: var(--koho);
+}
+
+.MuiFormHelperText-root.Mui-error {
+  padding-left: 80px !important;
+}
+
+.logout {
+  color: var(--main-one);
+  font-size: 3.5rem !important;
+}
+
+.logout:hover {
+  color: var(--highlight);
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .icon-white {
-  color: white;
+  color: white !important;
 }
 
 .slydro-logo {
@@ -34,11 +144,19 @@ body {
   width: 100%;
 }
 
+.bar-separator {
+  margin: 6px 0 6px 0;
+  height: 1px;
+  background-color: var(--main-one);
+  border: none;
+  width: 100%;
+}
+
 h1, h2 {
   font-family: var(--baloo);
   font-weight: 800;
   margin: 0 auto;
-  padding-top: 64px;
+  padding-top: 8px;
   color: var(--main-two);
   text-shadow: 0px 0px 3px var(--highlight),
   0px 0px 3px var(--highlight),
@@ -50,7 +168,7 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 3rem;
 }
 
 h2 {
