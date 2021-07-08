@@ -30,24 +30,25 @@ a {
 }
 
 .container {
-  margin: 8rem auto 2rem auto;
+  margin: 5.75rem auto 2rem auto;
 }
 
 .MuiAppBar-colorPrimary {
-  background-color: var(--main-two) !important;
+  background-color: var(--main-one) !important;
 }
 
 .nav-container {
   margin: auto;
+  background-color: var(--main-one);
 }
 
 .nav-container svg {
-  color: var(--highlight);
+  color: var(--main-two);
   font-size: 200%;
 }
 
 .nav-container svg:hover {
-  color: var(--main-one);
+  color: var(--highlight);
 }
 
 .MuiToolbar-gutters {
@@ -96,7 +97,7 @@ a {
   transition: none !important;
 }
 
-#email, #password, #confirmPassword, #firstName, #lastName {
+#email, #password, #confirmPassword, #alias {
   background-color: white;
   color: var(--main-one);
   padding-left: 16px;
@@ -104,7 +105,7 @@ a {
   border-radius: 16px;
 } 
 
-#email-label, #password-label, #confirmPassword-label, #firstName-label, #lastName-label {
+#email-label, #password-label, #confirmPassword-label, #alias-label {
   padding-left: 80px !important;
   color: var(--highlight) !important;
   font-family: var(--koho);
@@ -115,7 +116,7 @@ a {
 }
 
 .logout {
-  color: var(--main-one);
+  color: var(--main-two);
   font-size: 3.5rem !important;
 }
 
@@ -127,6 +128,7 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: var(--main-one);
 }
 
 .icon-white {
