@@ -89,7 +89,7 @@ class login extends Component {
     return (
       <Grid container className={classes.form}>
         <Grid item sm />
-        <Grid item sm={6}>
+        <Grid item sm={4}>
           <br/>
         <img
             src={AppIcon}
