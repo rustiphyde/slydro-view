@@ -71,6 +71,28 @@ import {
       .catch(err => console.log(err));
   };
 
+  export const resetPassword = (slyderData) => dispatch => {
+    dispatch({ type: LOADING_UI });
+    axios
+    .post("/reset", slyderData)
+    .then(res => {
+      dispatch({ type: CLEAR_ERRORS });
+      dispatch({ type: SET_SUCCESS,
+        payload: res.data
+      });
+    })
+    .then(() => {
+      setTimeout(() => {dispatch({ type: CLEAR_SUCCESS })}, 5000);      
+    })
+    .catch(err => {
+      dispatch({ type: CLEAR_SUCCESS });
+      dispatch({
+        type: SET_ERRORS,
+        payload: err.response.data
+      });
+    });
+  };
+
   // Helper fxn for setting authorization header in various places
 const setAuthorizationHeader = token => {
     const FBIdToken = `Bearer ${token}`;
