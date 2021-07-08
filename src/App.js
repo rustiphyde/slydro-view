@@ -35,6 +35,7 @@ import Footer from './components/Footer';
 // Pages
 import login from './pages/login';
 import signup from './pages/signup';
+import reset from './pages/reset';
 
 axios.defaults.baseURL = "https://us-central1-slydro-2327.cloudfunctions.net/api";
 
@@ -80,7 +81,8 @@ class App extends Component {
             
             <div className="container">
             
-            {/* <hr className="bar-separator"/> */}
+            <hr className="bar-separator"/>
+
                 <Switch>
                 <AuthRoute
                 exact
@@ -91,6 +93,11 @@ class App extends Component {
                 exact
                 path="/signup"
                 component={signup}
+                />
+                <AuthRoute
+                exact
+                path="/reset"
+                component={reset}
                 />
                 </Switch>
             </div>
