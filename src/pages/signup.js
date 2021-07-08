@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import AppIcon from "../images/slydro-logo-big.png";
 import { Link } from "react-router-dom";
 
 // Redux
@@ -54,7 +55,7 @@ const styles = {
 	link: {
 		color: "#02fafa",
 		"&:hover": {
-			color: "#f5e2b3",
+			color: "#9efafa",
 		},
 	},
 };
@@ -66,8 +67,7 @@ class signup extends Component {
 			email: "",
 			password: "",
 			confirmPassword: "",
-			firstName: "",
-			lastName: "",
+			alias: "",
 			loading: false,
 		};
 	}
@@ -82,8 +82,7 @@ class signup extends Component {
 			email: this.state.email,
 			password: this.state.password,
 			confirmPassword: this.state.confirmPassword,
-			firstName: this.state.firstName,
-			lastName: this.state.lastName,
+			alias: this.state.alias
 		};
 		this.props.signupSlyder(newSlyderData, this.props.history);
 	};
@@ -100,7 +99,14 @@ class signup extends Component {
 		return (
 			<Grid container className={classes.form}>
 				<Grid item sm />
-				<Grid item sm={8}>
+				<Grid item sm={6}>
+					<br/>
+				<img
+            src={AppIcon}
+            alt="Slydro Logo"
+            className={classes.image}
+            width="100"
+          />
                 <Typography variant="h4" className="title">
             <span className="title">SIGN UP</span>
           </Typography>
@@ -153,38 +159,22 @@ class signup extends Component {
 								shrink: true,
 							}}
 						/>
-						<span>
 							<TextField
-								id="firstName"
-								name="firstName"
+								id="alias"
+								name="alias"
 								type="name"
-								label="FIRST NAME"
+								label="ALIAS"
 								className={classes.textField}
-								helperText={errors && errors.firstName ? errors.firstName : ""}
-								error={errors && errors.firstName ? true : false}
-								value={this.state.firstName}
+								helperText={errors && errors.alias ? errors.alias : ""}
+								error={errors && errors.alias ? true : false}
+								value={this.state.alias}
 								onChange={this.handleChange}
-								autoComplete="given-name"
+								fullWidth
+								autoComplete="nickname"
 								InputLabelProps={{
 									shrink: true,
 								}}
-							/>
-							<TextField
-								id="lastName"
-								name="lastName"
-								type="name"
-								label="LAST NAME"
-								className={classes.textField}
-								helperText={errors && errors.lastName ? errors.lastName : ""}
-								error={errors && errors.lastName ? true : false}
-								value={this.state.lastName}
-								onChange={this.handleChange}
-								autoComplete="family-name"
-								InputLabelProps={{
-									shrink: true,
-								}}
-							/>
-						</span>
+							/>							
 						<br />
 						{errors && errors.general && (
 							<Typography variant="body2" className={classes.customError}>

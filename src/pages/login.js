@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import AppIcon from "../images/slydro-logo-big.png";
 
 // Redux
 import { connect } from 'react-redux';
@@ -55,7 +56,7 @@ const styles = {
   link: {
 		color: "#02fafa",
 		"&:hover": {
-			color: "#f5e2b3",
+			color: "#9efafa",
 		},
 	},
 }
@@ -89,6 +90,13 @@ class login extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm={6}>
+          <br/>
+        <img
+            src={AppIcon}
+            alt="Slydro Logo"
+            className={classes.image}
+            width="100"
+          />
           <Typography variant="h4" className="title">
             <span className="title">LOGIN</span>
           </Typography>
