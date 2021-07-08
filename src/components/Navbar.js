@@ -14,6 +14,7 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import LoginIcon from '../icons/LoginIcon';
 import SignupIcon from '../icons/SignupIcon';
 import ResetIcon from '../icons/ResetIcon';
+import HomeIcon from '../icons/HomeIcon';
 
 const styles = {
 
@@ -29,9 +30,11 @@ render(){
             <Toolbar className="nav-container">
             { authenticated  ? (
                 <Fragment>
-                    <div className="centered">
-                    <h3 className="nav-title">Logged In</h3>
-                    </div>
+                    <Link to="/">
+                        <SlydroButton tip="HOME">
+                            <HomeIcon/>
+                        </SlydroButton>
+                    </Link>
                 </Fragment>
             ) : (
                 <Fragment>
