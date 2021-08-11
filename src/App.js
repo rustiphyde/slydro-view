@@ -36,6 +36,7 @@ import Footer from './components/Footer';
 import login from './pages/login';
 import signup from './pages/signup';
 import reset from './pages/reset';
+import home from './pages/home';
 
 axios.defaults.baseURL = "https://us-central1-slydro-2327.cloudfunctions.net/api";
 
@@ -84,6 +85,7 @@ class App extends Component {
             <hr className="bar-separator"/>
 
                 <Switch>
+                <Route exact path="/" component={home} />
                 <AuthRoute
                 exact
                 path="/login"
